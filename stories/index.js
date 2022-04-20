@@ -15,7 +15,7 @@ import Header from 'components/Appointment/Header';
 import Empty from 'components/Appointment/Empty';
 import Show from 'components/Appointment/Show';
 import Confirm from 'components/Appointment/Confirm';
-import Status from 'components/Application/Status';
+import Status from 'components/Appointment/Status';
 
 
 
