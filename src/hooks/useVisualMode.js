@@ -4,10 +4,15 @@ import { useState } from 'react';
 
 export default function useVisualMode(initialValue) {
   const [mode, setMode] = useState(initialValue);
+  const [history , setHistory] = useState([initialValue])
   
   function transition(updateMode) {
     setMode(updateMode)
   }
 
-  return { mode, transition };
+  function back() {
+
+  }
+
+  return { mode, transition, back };
 }
