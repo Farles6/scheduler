@@ -59,6 +59,36 @@ export function getInterview(state, interview) {
   return resObject;
 }
 
-// 'id': interviewer.id,
-// 'name': interviewer.name,
-// 'avatar': interviewer.avatar,
+export function getInterviewersForDay(state, day) {
+  const resArray = [];
+  let selectedDay = null;
+
+  if (!state.days.length) {
+    return resArray;
+  }
+
+  if (!day) {
+    return resArray;
+  }
+
+  const interviewersData = Object.values(state.interviewers);
+  for (let result of state.days) {
+    if (result.name === day) {
+      selectedDay = result;
+    }
+  }
+
+  if (!selectedDay) {
+    return resArray;
+  }
+  for (let interviewersID of selectedDay.interviewers) {
+    for (let interviewer of interviewersData) {
+      if (interviewersID === interviewer.id) {
+        resArray.push(interviewer);
+      }
+
+    }
+  }
+
+  return resArray;
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import DayList from "./DayList";
 import Appointment from "./Appointment";
-import { getAppointmentsForDay, getInterview } from "helpers/selectors";
+import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
 import "components/Application.scss";
 
@@ -31,19 +31,19 @@ export default function Application(props) {
     });
   }, []);
 
+  const interviewers = getInterviewersForDay(state, state.day)
   const appointments = getAppointmentsForDay(state, state.day);
   const schedule = appointments.map(app => {
-    const interview = getInterview(state, appointments.interview);
+    const interview = getInterview(state, app.interview);
     return (
       < Appointment
         key={app.id}
-        id={app.id}
-        time={app.time}
-        interview={interview}
         {...app}
-      />
-    );
-  });
+        interview={interview}
+        interviewers={interviewers}
+        />
+        );
+      });
 
   return (
     <main className="layout">
