@@ -6,5 +6,5 @@ export default function Header(props) {
       <h4 className="text--semi-bold">{props.time}</h4>
       <hr className="appontment__seperator" />
     </header>
-  )
+  );
 }
