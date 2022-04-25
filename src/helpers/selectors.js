@@ -42,7 +42,6 @@ export function getInterview(state, interview) {
     return null;
   }
 
-  console.log('=======', interview);
   for (let interviewer of interviewerData) {
 
     if (interviewer.id === interview.interviewer) {

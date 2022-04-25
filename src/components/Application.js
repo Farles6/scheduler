@@ -16,8 +16,9 @@ export default function Application(props) {
   });
 
   function bookInterview(id, interview) {
-    console.log(id, interview);
+    console.log('book interview', id, interview);
   }
+
 
   const setDay = day => setState({ ...state, day });
 
@@ -46,7 +47,7 @@ export default function Application(props) {
         {...app}
         interview={interview}
         interviewers={interviewers}
-        bookInterview={bookInterview(app.id, interview)}
+        bookInterview={bookInterview}
       />
     );
   });
