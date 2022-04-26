@@ -19,9 +19,21 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
+    const days = [...state.days];
+
+    const index = days.map(day => day.name).indexOf(state.day);
+
+    const day = days[index];
+
+    if (!state.appointments[id].interview) {
+      day.spots--;
+    }
+    days[index] = day;
+
+
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => {
-        setState({ ...state, appointments });
+        setState({ ...state, appointments, days });
       });
   }
 
@@ -36,9 +48,19 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
+    const days = [...state.days];
+
+    const index = days.map(day => day.name).indexOf(state.day);
+
+    const day = days[index];
+
+    day.spots++;
+
+    days[index] = day;
+
     return axios.delete(`/api/appointments/${id}`)
       .then(() => {
-        setState({ ...state, appointments }
+        setState({ ...state, appointments, days }
         );
         console.log('successful');
       });
