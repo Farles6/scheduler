@@ -9,6 +9,11 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
+  //sets day on nav bar when a day is clicked
+  const setDay = day => setState({ ...state, day });
+
+  //saves the input data and updates the interview slot
+
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -37,6 +42,7 @@ export default function useApplicationData() {
       });
   }
 
+  // deletes an appointment
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -66,7 +72,6 @@ export default function useApplicationData() {
       });
   }
 
-  const setDay = day => setState({ ...state, day });
 
   useEffect(() => {
     Promise.all([

@@ -1,3 +1,4 @@
+//uses appointment info in state to generate an array of appointments for given day
 
 export function getAppointmentsForDay(state, day) {
   const resArray = [];
@@ -34,6 +35,8 @@ export function getAppointmentsForDay(state, day) {
   return resArray;
 }
 
+// gets all info about interviews and returns an object 
+
 export function getInterview(state, interview) {
   const interviewerData = Object.values(state.interviewers);
   let resObject = {};
@@ -57,6 +60,8 @@ export function getInterview(state, interview) {
 
   return resObject;
 }
+
+//generates an array of available interviews for given day
 
 export function getInterviewersForDay(state, day) {
   const resArray = [];
