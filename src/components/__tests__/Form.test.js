@@ -32,7 +32,7 @@ describe('Form', () => {
       onSave={onSave}
       student=''
     />);
-    
+
     fireEvent.click(getByText("Save"));
 
     expect(getByText(/student name cannot be blank/i)).toBeInTheDocument();

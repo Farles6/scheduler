@@ -68,7 +68,6 @@ export default function useApplicationData() {
       .then(() => {
         setState({ ...state, appointments, days }
         );
-        console.log('successful');
       });
   }
 
