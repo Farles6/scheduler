@@ -5,6 +5,8 @@
 ![New appointment added](docs/new-appointment-added.png)
 ![Deleting appointment](docs/deleting-appointment.png)
 
+Student project for Lighthouse Labs
+
 ## Setup
 
 Install dependencies with `npm install`.
