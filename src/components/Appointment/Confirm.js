@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 
+//to confirm deleting an appointment. destructive action
 
 export default function Confirm(props) {
   return (
