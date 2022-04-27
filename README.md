@@ -1,5 +1,10 @@
 # Interview Scheduler
 
+![Basic Layout](docs/Basic-format.png)
+![Add new appointment](docs/Adding-a-new-appointment.png)
+![New appointment added](docs/new-appointment-added.png)
+![Deleting appointment](docs/deleting-appointment.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
